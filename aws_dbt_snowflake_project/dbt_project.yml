@@ -1,0 +1,31 @@
+name: 'aws_dbt_snowflake_project'
+version: '1.0.0'
+
+profile: 'aws_dbt_snowflake_project'
+
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         
+  - "target"
+  - "dbt_packages"
+
+
+models:
+  aws_dbt_snowflake_project:
+    Bronze:
+      +materialized: table
+      +schema: bronze
+    Silver:
+      +materialized: table
+      +schema: silver
+    Gold:
+      +materialized: table
+      +schema: gold
+      ephemeral:
+        +materialized: ephemeral

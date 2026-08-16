@@ -1,0 +1,9 @@
+sources:
+  - name: stage
+    database: airbnb
+    schema: stage
+
+    tables:
+      - name: listings
+      - name: bookings
+      - name: hosts
