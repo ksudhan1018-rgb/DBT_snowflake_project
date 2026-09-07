@@ -1,0 +1,1 @@
+# DBT_snowflake_project
